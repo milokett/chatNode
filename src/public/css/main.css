@@ -1,0 +1,35 @@
+body{
+    background: #B24592;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F15F79, #B24592);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F15F79, #B24592); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */              
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Fjalla One', sans-serif;
+
+}
+
+#contenido{
+    display: none;
+}
+
+.error{
+    color: red;
+}
+
+.whisper{
+    color:grey;
+    font-style: italic;
+}
+
+#chat{
+    font-family: 'Roboto Mono', monospace;
+}
+
+.card-header{
+    background: none;
+}

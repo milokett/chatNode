@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/1f8522ae56.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">    <link rel="stylesheet" href="css/main.css">
+    <title>Chat JS</title>
+   
+</head>
+<body>
+
+    <nav class="navbar navbar-light ">
+        <a class="navbar-brand mx-auto" href="https://github.com/milokett/chatNode" target="_blank">Javascript chat</a>
+    </nav>
+
+    <div class="card col-md-4 mt-5 mx-auto" id="contenedorUsuario">
+        <div class="card-header">
+            <h3>Ingresa tu nombre de usuario:</h3>
+        </div>
+        <p id="errorUsuario"></p>
+        <div class="card-body">
+            <form id="formularioUsuario">
+                <input type="text" id="usuario" class="form-control">
+                <input type="submit" class="btn btn-danger btn-block mt-2">
+            </form>
+        </div>
+    </div>
+
+    <div class="container" id="contenido">
+        <div class="row">
+            <div class="col-md-6 offset-md-1 mt-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Charlemos</h3>
+                    </div>
+    
+                    <div id="chat" class="card-body"></div>
+                    <form id="formulario-mensaje" class="card-footer">
+                        <div class="input-group">
+                            <input type="text" id="mensaje" class="form-control">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-danger">
+                                    <i class="fas fa-external-link-square"></i> Enviar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+    
+                </div>
+            </div>
+            <div class="card col-md-3 mt-4">
+                <div class="card-header">
+                    <h3>Usuarios</h3>
+                </div>
+                <div class="card-body">
+                    <div id="nombreUsuario"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
