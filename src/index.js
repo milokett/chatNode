@@ -12,7 +12,7 @@ const io = socketio.listen.listen(server)
 
 // conexion a db
 
-mongoose.connect('mongodb+srv://milo:<milo>@chat-tffcd.mongodb.net/test?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://milo:milo@cluster0-75tyi.mongodb.net/test?retryWrites=true&w=majority')
     .then(db => console.log('db ta conectada'))
     .catch(err => console.log(err));
 
