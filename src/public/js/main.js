@@ -56,4 +56,14 @@ $(function () {
         $chat.append(`<p class="whisper"><b> ${data.nick}</b> ${data.msj} </p>`);
     })
 
+
+    socket.on('mensajes viejos', msjs =>{
+        for (let i = 0; i < msjs.length; i++){
+            mostrarMsj(msjs[i]);
+        }
+    })
+
+    function mostrarMsj(data){
+        $chat.append(`<p class="whisper"><b> ${data.nick}</b> ${data.msj} </p>`);
+    }
 })

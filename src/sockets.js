@@ -1,11 +1,16 @@
+const Chat = require('./models/Chat');
+
 module.exports = function (io) {
 
     let usuarios = {
 
     };
 
-    io.on('connection', socket => {
+    io.on('connection', async socket => {
         console.log('un nuevo usuario conectado');
+
+        let mensajes = await Chat.find({}).limit(10);
+        socket.emit('mensajes viejos', mensajes);
 
         socket.on('nuevo usuario', (data, cb) => {
             if (data in usuarios){
@@ -18,7 +23,7 @@ module.exports = function (io) {
             }
         });
 
-        socket.on('enviar mensaje', (data, cb) => {
+        socket.on('enviar mensaje', async (data, cb) => {
 
             var msj = data.trim();
 
@@ -40,6 +45,12 @@ module.exports = function (io) {
                     cb('Error! Ingresa un mensaje valido.');
                 }
             } else {
+                var nuevoMensaje = new Chat({
+                    msj,
+                    nick: socket.usuario
+                });
+                await nuevoMensaje.save();
+
                 io.sockets.emit('nuevo mensaje', {
                     mensaje: data,
                     user: socket.usuario

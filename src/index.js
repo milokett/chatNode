@@ -4,9 +4,18 @@ const path = require('path');
 const express = require('express');
 const socketio = require('socket.io');
 
+const mongoose = require('mongoose');
+
 const app = express();
 const server = http.createServer(app);
 const io = socketio.listen.listen(server)
+
+// conexion a db
+
+mongoose.connect('mongodb://localhost/node-chat')
+    .then(db => console.log('db ta conectada'))
+    .catch(err => console.log(err));
+
 
 // config
 
